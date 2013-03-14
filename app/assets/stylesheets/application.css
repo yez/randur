@@ -10,7 +10,12 @@
  *
  *= require_self
  *= require_tree .
+ *= require_bootstrap
 */
 .hidden{
 	display:none;
+}
+
+.container{
+
 }
