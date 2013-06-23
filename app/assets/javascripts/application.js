@@ -59,8 +59,19 @@ function goBack()
 }
 
 
+function show_spinner() {
+	$("img.hero").hide();
+	$('.spinner').show();
+}
+
+function hide_spinner() {
+	$('.spinner').hide();
+	$("img.hero").show();
+}
+
 function goNext()
 {
+	debugger;1
 	if(moving == false)
 	{
 		moving = true;
@@ -72,11 +83,13 @@ function goNext()
 		}
 		else
 		{
+			show_spinner();
 			$.ajax({
 				dataType:'json',
 				url: '/new_url',
 				complete: function(data, response, text){
 					var json_response = JSON.parse(data.responseText);
+					hide_spinner();
 					image_history.push(json_response.image_url);
 					replace_image(json_response.image_url);
 					moving = false;
