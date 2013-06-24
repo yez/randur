@@ -4,6 +4,8 @@ gem 'rails', '3.2.3'
 
 gem 'httparty'
 
+gem 'pg'
+
 gem "therubyracer"
 gem "less-rails"
 
