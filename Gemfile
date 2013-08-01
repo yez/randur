@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.3'
+gem 'rails', '4.0'
 
 gem 'httparty'
 
@@ -11,15 +11,16 @@ gem "less-rails"
 
 gem 'haml-rails'
 
-gem 'twitter-bootstrap-rails'
-# Gems used only for assets and not required
-# in production environments by default.
+gem 'sass-rails'
 
-gem 'sass-rails',   '~> 3.2.3'
+gem 'uglifier'
 
-gem 'uglifier', '>= 1.0.3'
+gem "jquery-rails", ">= 2.0.0"
 
-gem 'jquery-rails'
+gem 'railties'
+
+group :assets do
+end
 
 group :development do
   gem 'debugger'

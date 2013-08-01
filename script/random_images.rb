@@ -2,7 +2,7 @@
 
 class FillImages
 
-  THREAD_POOL = 20
+  THREAD_POOL = 1
 
   def threaded_fill(amount)
     @amount_to_fetch = amount

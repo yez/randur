@@ -2,24 +2,21 @@ class BaseController < ApplicationController
 
   before_filter :set_image_set
 
-	def index
+  def index
     @image_url = @image_set.next_url
-	end
+  end
 
-	def image_url
-    measurement = Benchmark.measure do
+  def image_url
     @image_url = @image_set.next_url
-		if request.xhr?
-			render json: { image_url: @image_url }
+    if request.xhr?
+      render json: { image_url: @image_url }
       unless @image_set.has_enough?
         @image_set.set_images
       end
-		else
-			redirect_to root_path
-		end
+    else
+      redirect_to root_path
     end
-    puts measurement
-	end
+  end
 
   private
 

@@ -1,21 +1,19 @@
+require 'random_image'
 class ImageSet
-  IMAGE_COUNT = 30
+  IMAGE_COUNT = 5
 
   attr_accessor :images
 
   def set_images
     self.images ||= []
-    thread_image_set(IMAGE_COUNT)
+    fill_image_set(IMAGE_COUNT)
   end
 
-  def thread_image_set(num_times)
+  def fill_image_set(num_times)
     threads = []
-    num_times.times do
-      threads << Thread.new do
-        self.images << RandomImage.new
-      end
+    num_times.times do  
+      self.images << RandomImage.new
     end
-    threads.each { |th| th.join }
   end
 
   def has_enough?
@@ -23,7 +21,7 @@ class ImageSet
   end
 
   def next_url
-    pop_image.url
+    pop_image.try(:url)
   end
 
   def pop_image

@@ -1,19 +1,5 @@
-// This is a manifest file that'll be compiled into application.js, which will include all the files
-// listed below.
-//
-// Any JavaScript/Coffee file within this directory, lib/assets/javascripts, vendor/assets/javascripts,
-// or vendor/assets/javascripts of plugins, if any, can be referenced here using a relative path.
-//
-// It's not advisable to add code directly here, but if you do, it'll appear at the bottom of the
-// the compiled file.
-//
-// WARNING: THE FIRST BLANK LINE MARKS THE END OF WHAT'S TO BE PROCESSED, ANY BLANK LINE SHOULD
-// GO AFTER THE REQUIRES BELOW.
-//
 //= require jquery
-//= require jquery_ujs
-//= require twitter/bootstrap
-//= require_tree .
+//= require random_image
 
 $(document).ready(function(){
 
@@ -69,31 +55,22 @@ function hide_spinner() {
 	$("img.hero").show();
 }
 
-function goNext()
-{
-	debugger;1
-	if(moving == false)
-	{
+function goNext(){
+	if(moving == false){
 		moving = true;
 		position = position + 1;
-		if(typeof image_history[position] != 'undefined')
-		{
+		if(typeof image_history[position] != 'undefined'){
 			replace_image(image_history[position]);
 			moving = false;
 		}
-		else
-		{
+		else{
 			show_spinner();
-			$.ajax({
-				dataType:'json',
-				url: '/new_url',
-				complete: function(data, response, text){
-					var json_response = JSON.parse(data.responseText);
-					hide_spinner();
-					image_history.push(json_response.image_url);
-					replace_image(json_response.image_url);
-					moving = false;
-				}
+			var randomImage = new RandomImage();
+			randomImage.requestImage(function(json_response){
+				image_history.push(json_response.image_url);
+				replace_image(json_response.image_url);
+				moving = false;
+				hide_spinner();
 			});
 		}
 	}
