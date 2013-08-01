@@ -7,7 +7,10 @@ gem 'httparty'
 gem 'pg'
 
 gem "therubyracer"
+
 gem "less-rails"
+
+gem "twitter-bootstrap-rails"
 
 gem 'haml-rails'
 
