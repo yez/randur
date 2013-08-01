@@ -24,6 +24,9 @@ gem "jquery-rails", ">= 2.0.0"
 
 gem 'railties'
 
+#need for heroku logging with rails 4
+gem 'rails_12factor'
+
 group :assets do
 end
 
