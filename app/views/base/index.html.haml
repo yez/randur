@@ -1,6 +1,9 @@
-.image-container.span9.offset1
-  %center
+.container.image-container
+  %center.row
+    .ad.span2
+      = render partial: 'adsense'
     .spinner{style: 'display:none'}
       %h1
         SPINNER
-    %img.hero{src: @image_url }
+    .span10
+      %img.hero{src: @image_url }
