@@ -12,6 +12,8 @@ gem "therubyracer"
 
 gem "less-rails"
 
+gem 'newrelic_rpm'
+
 gem "twitter-bootstrap-rails"
 
 gem 'haml-rails'
