@@ -2,7 +2,6 @@
 //= require random_image
 
 $(document).ready(function(){
-
 	moving = false;
 	image_history = [];
 	image_history.unshift($('.hero').attr('src'));
@@ -21,11 +20,20 @@ $(document).ready(function(){
 			}
 		}
 	});
+
+	$(document).on('click', '.arrow-right', function(e){		
+		goNext();
+	});
+
+	$(document).on('click', '.arrow-left', function(e){
+		goBack();
+	});
+
 });
 
 function replace_image(url)
 {
-	$('img').attr('src', url);
+	$('img.hero').attr('src', url);
 }
 
 function goBack()
@@ -45,7 +53,7 @@ function goBack()
 }
 
 
-function show_spinner() {
+function show_spinner() {	
 	$("img.hero").hide();
 	$('.spinner').show();
 }
@@ -55,7 +63,7 @@ function hide_spinner() {
 	$("img.hero").show();
 }
 
-function goNext(){
+function goNext(){	
 	if(moving == false){
 		moving = true;
 		position = position + 1;

@@ -9,10 +9,13 @@ class ImageSet
     fill_image_set(IMAGE_COUNT)
   end
 
-  def fill_image_set(num_times)
-    threads = []
-    num_times.times do  
-      self.images << RandomImage.new
+  def fill_image_set(num_times)    
+    if Rails.env.development?
+      self.images = Image.last(10)
+    else 
+      num_times.times do
+        self.images << RandomImage.new      
+      end
     end
   end
 

@@ -1,9 +1,16 @@
-.container.image-container
-  %center.row
+.container-fluid.image-container.margin-top
+  .row-fluid
+    .span10.margin-bottom
+      .span1.offset6.arrow-left
+        = image_tag 'arrow_left.png'
+      .span1.offset1.arrow-right
+        = image_tag 'arrow_right.png'
+  .row-fluid
     .ad.span2
-      = render partial: 'adsense'
-    .spinner{style: 'display:none'}
-      %h1
-        SPINNER
-    .span10
-      %img.hero{src: @image_url }
+      = render partial: 'adsense' 
+    .spinner
+      = image_tag 'spinner.gif'
+    .span8
+      %img.hero.img-polaroid{ src: @image_url }
+    .ad.span2
+      = render partial: 'adsense' 

@@ -12,10 +12,17 @@
  *= require_tree .
  *= require bootstrap_and_overrides
 */
-.hidden{
-	display:none;
+.spinner{
+	display: none;
 }
 
-.container{
-
+.hero{
+  max-height: 800px;
+  max-width: 800px; 
+}
+.margin-bottom{
+  margin-bottom: 30px;
+}
+.margin-top{
+  margin-top: 30px;
 }
