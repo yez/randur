@@ -4,18 +4,24 @@ class ImageSet
 
   attr_accessor :images
 
+  def self.build_from_session(urls)
+    set = ImageSet.new
+    set.images = [].tap do |img_arr|
+      urls.each do |url|
+        img_arr << Image.where(url: url).first
+      end
+    end
+    set
+  end
+
   def set_images
     self.images ||= []
     fill_image_set(IMAGE_COUNT)
   end
 
-  def fill_image_set(num_times)    
-    if Rails.env.development?
-      self.images = Image.last(10)
-    else 
-      num_times.times do
-        self.images << RandomImage.new      
-      end
+  def fill_image_set(num_times)
+    num_times.times do
+      self.images << RandomImage.new
     end
   end
 
