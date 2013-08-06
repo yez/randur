@@ -1,6 +1,6 @@
 require 'random_image'
 class ImageSet
-  IMAGE_COUNT = 5
+  IMAGE_COUNT = 1
 
   attr_accessor :images
 
