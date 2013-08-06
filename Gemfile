@@ -24,6 +24,10 @@ gem 'sass-rails'
 gem 'rails_12factor'
 gem 'unicorn'
 
+group :production do
+  gem 'heroku-deflater'
+end
+
 group :development do
   gem 'debugger'
 end
