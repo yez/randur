@@ -8,12 +8,9 @@ class RandomImage
   end
 
   def set_url
-    self.url = if Rails.env.development?
-      Image.last.url
-    elsif hash_from_random_fetch
-      img = Image.where(url: "http://i.imgur.com/#{self.hash}.jpg").first_or_create
-      img.url
-    end
+    hash_from_random_fetch
+    img = Image.where(url: "http://i.imgur.com/#{self.hash}.jpg").first_or_create
+    self.url = img.url
   end
 
   def random_fetch_url

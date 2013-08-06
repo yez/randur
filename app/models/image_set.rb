@@ -30,10 +30,10 @@ class ImageSet
   end
 
   def next_url
-    pop_image.try(:url)
+    shift_image.try(:url)
   end
 
-  def pop_image
-    self.images.pop
+  def shift_image
+    self.images.shift
   end
 end

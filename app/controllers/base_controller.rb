@@ -8,7 +8,7 @@ class BaseController < ApplicationController
 
   def image_url
     @image_url = @image_set.next_url
-    if request.xhr?
+    if !!request.xhr?
       render json: { image_url: @image_url }
       unless @image_set.has_enough?
         @image_set.set_images
@@ -21,16 +21,25 @@ class BaseController < ApplicationController
   private
 
   def set_image_set
-    if session[:image_urls].nil?
-      instantiate_and_set_image_set
-    else
+    pop_image_session
+    if session[:image_urls].present?
       @image_set = ImageSet.build_from_session(session[:image_urls])
+    else
+      instantiate_and_set_image_set
     end
   end
 
   def instantiate_and_set_image_set
     @image_set = ImageSet.new
     @image_set.set_images
-    session[:image_urls] = @image_set.images.map(&:url)
+    session[:image_urls] = @image_set.images.collect(&:url)
+  end
+
+  def pop_image_session
+    if session[:image_urls].present?
+      image_urls = session[:image_urls]
+      image_urls.shift
+      session[:image_urls] = image_urls
+    end
   end
 end
