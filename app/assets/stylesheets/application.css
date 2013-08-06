@@ -7,12 +7,45 @@
 	display: none;
 }
 
+.horizontal-divider{
+  background-color: black;
+}
+
 .hero{
   max-width: 800px;
 }
+.image-container {
+  min-height: 650px !important;
+}
+
+.left-right-border {
+  border-left: 10px solid black;
+  border-right: 10px solid black;
+}
+
 .margin-bottom{
   margin-bottom: 30px;
 }
 .margin-top{
-  margin-top: 30px;
+  margin-top: 10px;
+}
+.padding-top{
+  padding-top: 10px;
+}
+.dark-background {
+  background-color: #EDEDED;
+}
+.light-background {
+  background-color: white;
+}
+.no-padding {
+  padding: 0 !important;
+}
+
+.copy-text {
+  text-align: left;
+}
+
+.copy-text div{
+  padding: 10px;
 }

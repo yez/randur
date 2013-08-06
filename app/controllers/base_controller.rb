@@ -2,7 +2,7 @@ class BaseController < ApplicationController
 
   before_filter :set_image_set
 
-  def index    
+  def index
     @image_url = @image_set.next_url
   end
 
@@ -20,17 +20,12 @@ class BaseController < ApplicationController
 
   private
 
-  def set_image_set 
-    if session[:image_set]
-      @image_set = session[:image_set]
-    else
-      instantiate_and_set_image_set
-    end
+  def set_image_set
+    instantiate_and_set_image_set
   end
 
   def instantiate_and_set_image_set
     @image_set = ImageSet.new
     @image_set.set_images
-    session[:image_set] = @image_set
   end
 end

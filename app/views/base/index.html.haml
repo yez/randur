@@ -1,23 +1,26 @@
-.container-fluid.image-container.margin-top
+.container-fluid.padding-top.top-nav.dark-background
   .row-fluid
     .span10.margin-bottom.navigation
-      %h1.span1
-        Random Images
-      .span1.offset5.arrow-left
+      %h1.span4
+        Randum Image
+      .span1.offset1.arrow-left
         = image_tag 'arrow_left.png'
-
-      .span1.offset1.arrow-right
+      .span1.offset2.arrow-right
         = image_tag 'arrow_right.png'
       .span3
         = render 'add_this'
+.container-fluid.no-padding
+  .span12.horizontal-divider
+.container-fluid.dark-background
   .row-fluid
     .ad.span2
       = render partial: 'adsense'
-    .spinner
-      = image_tag 'spinner.gif'
-    .span8.text-center
+    .span8.text-center.light-background.image-container.left-right-border
+      .spinner
+        = image_tag 'spinner.gif'
       %img.hero.img-polaroid{ src: @image_url }
     .ad.span2
       = render partial: 'adsense'
+.container-fluid.dark-background
   .row-fluid
     = render 'copy_text'
