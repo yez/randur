@@ -1,16 +1,20 @@
-.container-fluid.padding-top.top-nav
-  .row-fluid.span12
-    %h1.span4.pacifico.extra-large.header-text
-      Randum Image
-    %p.span4.top-copy
-      Your source for the funny, weird, and quirky.
-    .span3.add-this-container
-      = render 'add_this'
-.container-fluid.offset1
+.row-fluid.span11.padding-top.top-nav.offset1
+  %h1.span4.pacifico.extra-large.header-text
+    Randum Image
+  %p.span4.top-copy
+    Your source for the funny, weird, and quirky.
+  .span3.add-this-container
+    = render 'add_this'
+.row-fluid.span11.offset4.arrows-container
   = render 'arrows'
-  .row-fluid
-    .span8.text-center
-      .spinner
-        = image_tag 'spinner.gif'
-      %img.hero.img-polaroid{ src: @image_url }
-= render 'copy_text'
+.row.span1.adsense-container
+  =render 'adsense'
+.row-fluid.span7
+  .text-center
+    .spinner
+      = image_tag 'spinner.gif'
+    %img.hero.img-polaroid{ src: @image_url }
+.row.span1.adsense-container
+  =render 'adsense'
+.row.span9.offset1.margin-top
+  = render 'copy_text'

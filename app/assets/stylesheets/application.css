@@ -108,6 +108,19 @@ img.hero {
 
 .arrows-container{
   margin-bottom: 5px;
-  padding-left: 47px;
 }
 
+.adsense-small-skyscraper{
+  margin-top: 130px;
+}
+
+.padding-left{
+  padding-left: 15px !important;
+}
+.padding-right{
+  padding-right: 15px !important;
+}
+
+.adsense-container{
+  width: 170px !important;
+}
