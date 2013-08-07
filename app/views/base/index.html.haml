@@ -1,26 +1,16 @@
-.container-fluid.padding-top.top-nav.dark-background
+.container-fluid.padding-top.top-nav
+  .row-fluid.span12
+    %h1.span4.pacifico.extra-large.header-text
+      Randum Image
+    %p.span4.top-copy
+      Your source for the funny, weird, and quirky.
+    .span3.add-this-container
+      = render 'add_this'
+.container-fluid.offset1
+  = render 'arrows'
   .row-fluid
-    .span10.margin-bottom.navigation
-      %h1.span4
-        Randum Image
-      .span1.offset1.arrow-left
-        = image_tag 'arrow_left.png'
-      .span1.offset2.arrow-right
-        = image_tag 'arrow_right.png'
-      .span3
-        = render 'add_this'
-.container-fluid.no-padding
-  .span12.horizontal-divider
-.container-fluid.dark-background
-  .row-fluid
-    .ad.span2
-      = render partial: 'adsense'
-    .span8.text-center.light-background.image-container.left-right-border
+    .span8.text-center
       .spinner
         = image_tag 'spinner.gif'
       %img.hero.img-polaroid{ src: @image_url }
-    .ad.span2
-      = render partial: 'adsense'
-.container-fluid.dark-background
-  .row-fluid
-    = render 'copy_text'
+= render 'copy_text'
