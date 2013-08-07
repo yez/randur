@@ -12,16 +12,13 @@
     = stylesheet_link_tag "application", :media => "all"
 
   %body
-    .container-fluid.no-padding
-      .row-fluid
-        .span12
-          = bootstrap_flash
-          = yield
-    %footer
-      .analytics
-      = render 'analytics'
+    .container-fluid.no-padding.span12.main-container
+      = bootstrap_flash
+      = yield
+  %footer
+    .analytics
+    = render 'analytics'
     %script{ type: 'text/javascript' }
       var addthis_config = {"data_track_addressbar":true};
     = javascript_include_tag "application"
     = javascript_include_tag "//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-52007e067f9d6f6b"
-    = javascript_include_tag "//pagead2.googlesyndication.com/pagead/show_ads.js"
