@@ -3,17 +3,11 @@
   .span6.offset4.arrows-container
     = render 'arrows'
 .row-fluid
-  .span1.adsense-container
-    =render 'adsense'
-
-  .span7
+  .span10.offset1
     .text-center
       .spinner
         = image_tag 'spinner.gif'
       %img.hero.img-polaroid{ src: @image_url }
-
-  .span1.adsense-container
-    =render 'adsense'
 .row-fluid
-  .span11.offset1.margin-top
+  .span10.offset2.margin-top
     = render 'copy_text'
