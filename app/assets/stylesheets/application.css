@@ -101,6 +101,7 @@ img.hero {
 
 .arrows-container{
   margin-bottom: 5px;
+  max-width: 450px !important;
 }
 
 .adsense-small-skyscraper{
