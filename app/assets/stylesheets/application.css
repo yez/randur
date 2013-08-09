@@ -26,6 +26,10 @@ h1.extra-large {
 	display: none;
 }
 
+.no-margin-left{
+  margin-left: 0px !important;
+}
+
 .pacifico {
   font-family: "Pacifico";
 }
@@ -116,5 +120,6 @@ img.hero {
 }
 
 .adsense-container{
-  width: 170px !important;
+  width: 175px !important;
+  margin-top: 100px;
 }
