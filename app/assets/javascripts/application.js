@@ -34,6 +34,7 @@ $(document).ready(function(){
 function replace_image(url)
 {
 	$('img.hero').attr('src', url);
+	$('meta[property="og:image"]').attr('content', url);
 }
 
 function goBack()
