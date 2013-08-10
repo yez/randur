@@ -28,7 +28,6 @@ $(document).ready(function(){
 	$(document).on('click', '.go-left', function(e){
 		goBack();
 	});
-
 });
 
 function replace_image(url)
@@ -53,6 +52,9 @@ function goBack()
 	}
 }
 
+function clickAddThisFacebook(){
+	$('.addthis_button_preferred_1').trigger('click');
+}
 
 function show_spinner() {
 	$("img.hero").hide();
@@ -65,6 +67,15 @@ function hide_spinner() {
 }
 
 function goNext(){
+	if(typeof document.viewed == "undefined"){
+		document.viewed = 1;
+	}
+	else{
+    document.viewed = document.viewed + 1;
+    if(document.viewed == 4){
+    	clickAddThisFacebook();
+    }
+	}
 	if(moving == false){
 		moving = true;
 		position = position + 1;
@@ -84,3 +95,6 @@ function goNext(){
 		}
 	}
 }
+
+
+
