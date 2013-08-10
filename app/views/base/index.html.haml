@@ -2,16 +2,18 @@
 .row-fluid
   .span3.offset4.arrows-container
     = render 'arrows'
-  .span3
-    = render 'shared/adsense_half_banner'
 .row-fluid
-  .span3.adsense-container.img-polaroid.text-center
-    = render 'shared/adsense'
-  .span9.no-margin-left
+  .span9.offset1
     .text-center
-      .spinner
-        = image_tag 'spinner.gif'
-      %img.hero.img-polaroid{ src: @image_url }
+      .row-fluid
+        = render 'shared/adsense_horizontal_banner'
+      .row-fluid
+        .spinner
+          = image_tag 'spinner.gif'
+        %img.hero.img-polaroid{ src: @image_url }
 .row-fluid
   .span10.offset2.margin-top
-    = render 'copy_text'
+    .row-fluid
+      = render 'shared/adsense_text_horizontal_banner'
+    .row-fluid
+      = render 'copy_text'
