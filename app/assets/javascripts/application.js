@@ -22,6 +22,14 @@ $(document).ready(function(){
 		}
 	});
 
+	$(document).on('click', 'img.hero', function(e){
+		console.log('in click');
+
+		if(mobilecheck() == true){
+			goNext();
+		}
+	});
+
 	$(document).on('click', '.go-right', function(e){
 		goNext();
 	});
