@@ -1,5 +1,6 @@
 //= require jquery
 //= require random_image
+//= require mobile_test
 
 $(document).ready(function(){
 	moving = false;
@@ -53,7 +54,10 @@ function goBack()
 }
 
 function clickAddThisFacebook(){
-	$('.addthis_button_preferred_1').trigger('click');
+	if(mobilecheck() == false)
+	{
+		$('.addthis_button_preferred_1').trigger('click');
+	}
 }
 
 function show_spinner() {
