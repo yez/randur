@@ -52,8 +52,8 @@ function goBack()
 	}
 }
 
-function clickAddThisFacebook(){
-	$('.addthis_button_preferred_1').trigger('click');
+function promoteAddThisFacebook(){
+  $('.addthis_toolbox').delay(200).fadeOut('slow').delay(50).fadeIn('slow');
 }
 
 function show_spinner() {
@@ -72,8 +72,8 @@ function goNext(){
 	}
 	else{
     document.viewed = document.viewed + 1;
-    if(document.viewed == 4){
-    	clickAddThisFacebook();
+    if(document.viewed % 4 == 0){
+    	promoteAddThisFacebook();
     }
 	}
 	if(moving == false){
