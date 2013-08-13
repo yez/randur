@@ -1,5 +1,6 @@
 //= require jquery
 //= require random_image
+//= require mobile_test
 
 $(document).ready(function(){
 	moving = false;
@@ -21,6 +22,14 @@ $(document).ready(function(){
 		}
 	});
 
+	$(document).on('click', 'img.hero', function(e){
+		console.log('in click');
+
+		if(mobilecheck() == true){
+			goNext();
+		}
+	});
+
 	$(document).on('click', '.go-right', function(e){
 		goNext();
 	});
@@ -28,7 +37,6 @@ $(document).ready(function(){
 	$(document).on('click', '.go-left', function(e){
 		goBack();
 	});
-
 });
 
 function replace_image(url)
@@ -53,6 +61,12 @@ function goBack()
 	}
 }
 
+function clickAddThisFacebook(){
+	if(mobilecheck() == false)
+	{
+		$('.addthis_button_preferred_1').trigger('click');
+	}
+}
 
 function show_spinner() {
 	$("img.hero").hide();
@@ -65,6 +79,15 @@ function hide_spinner() {
 }
 
 function goNext(){
+	if(typeof document.viewed == "undefined"){
+		document.viewed = 1;
+	}
+	else{
+    document.viewed = document.viewed + 1;
+    if(document.viewed == 4){
+    	clickAddThisFacebook();
+    }
+	}
 	if(moving == false){
 		moving = true;
 		position = position + 1;
@@ -84,3 +107,6 @@ function goNext(){
 		}
 	}
 }
+
+
+

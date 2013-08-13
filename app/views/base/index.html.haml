@@ -1,11 +1,11 @@
 = render 'shared/header'
-.row-fluid
+.row-fluid.hidden-phone
   .span3.offset4.arrows-container
     = render 'arrows'
 .row-fluid
   .span9.offset1
     .text-center
-      .row-fluid
+      .row-fluid.hidden-phone
         = render 'shared/adsense_horizontal_banner'
       .row-fluid
         .spinner
@@ -14,6 +14,6 @@
 .row-fluid
   .span10.offset2.margin-top
     .row-fluid
-      = render 'shared/adsense_text_horizontal_banner'
+      = render 'shared/adsense_horizontal_banner'
     .row-fluid
       = render 'copy_text'
