@@ -30,7 +30,15 @@ class ImageSet
   end
 
   def next_url
-    shift_image.try(:url)
+    next_image.try(:url)
+  end
+
+  def next_hash
+    next_image.try(:hash)
+  end
+
+  def next_image
+    @image ||= shift_image
   end
 
   def shift_image

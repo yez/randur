@@ -7,9 +7,8 @@ class BaseController < ApplicationController
   end
 
   def image_url
-    @image_url = @image_set.next_url
     if !!request.xhr?
-      render json: { image_url: @image_url }
+      render json: { image_url: @image_set.next_url, hash: @image_set.next_hash }
       unless @image_set.has_enough?
         @image_set.set_images
       end

@@ -45,6 +45,10 @@ function replace_image(url)
 	$('meta[property="og:image"]').attr('content', url);
 }
 
+function change_push_state(hash) {
+	history.pushState(null, null, hash);
+}
+
 function goBack()
 {
 	position = position - 1;
@@ -100,6 +104,7 @@ function goNext(){
 			var randomImage = new RandomImage();
 			randomImage.requestImage(function(json_response){
 				image_history.push(json_response.image_url);
+				change_push_state(json_response.hash);
 				replace_image(json_response.image_url);
 				moving = false;
 				hide_spinner();
@@ -108,5 +113,6 @@ function goNext(){
 	}
 }
 
-
-
+window.onpopstate = function(e){
+	goBack();
+}
