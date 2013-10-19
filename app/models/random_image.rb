@@ -9,7 +9,7 @@ class RandomImage
 
   def set_url
     hash_from_random_fetch
-    img = Image.where(url: "http://i.imgur.com/#{self.hash}.jpg").first_or_create
+    img = Image.new(url: "http://i.imgur.com/#{self.hash}.jpg")
     self.url = img.url
   end
 
